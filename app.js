@@ -27,8 +27,14 @@ server.use(bodyParser.urlencoded({extended: false}));//Set up the body parser
 
 //routers
 const add_book_router = require("./Routes/add_book")
+const delete_book_router = require("./Routes/delete_book")
+const search_for_book = require("./Routes/search_for_book")
+const worth_buying = require("./Routes/worth_buying")
 
 server.use(add_book_router)
+server.use(delete_book_router)
+server.use(search_for_book)
+server.use(worth_buying)
 
 
 //* Database connection
