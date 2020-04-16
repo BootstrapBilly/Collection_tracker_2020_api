@@ -2,6 +2,8 @@ const Book = require("../Models/Book")
 
 exports.add_book = async (req, res, next) => {
 
+    console.log(req.body)
+
     const year = req.body.year;//grab the year 
     const condition = req.body.condition//and condition from the request
 
