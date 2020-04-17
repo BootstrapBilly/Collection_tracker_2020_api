@@ -2,14 +2,16 @@ const Book = require("../Models/Book")
 
 exports.worth_buying = async (req, res, next) => {
 
-    const year = req.body.year;//grab the year 
-    const new_book_condition = req.body.condition//and condition from the request
+    console.log(req.body)
+
+    const year = req.body.form_values.year;//grab the year 
+    const new_book_condition = req.body.form_values.condition//and condition from the request
 
     try {
 
         const books_found = await Book.find({ year: year })//check if the books exist in the collection
 
-        if (!books_found) return res.status(200).json({ message: "Book missing from collection", worth_buying: true }) //if the book is missing, its worth buying
+        if (!books_found) return res.status(200).json({ message: "Book missing from collection", worth_buying: true, success:true  }) //if the book is missing, its worth buying
 
         const condition_weighting = [["Poor", 1], ["Fair", 2], ["Mint", 3]]//set out the value of each condition
 
@@ -18,7 +20,7 @@ exports.worth_buying = async (req, res, next) => {
         const condition_of_new_book = condition_weighting.find(book => book[0] === new_book_condition)[1]//Get the weighting for the condition of the new book
 
         //if the new book is in better condition, its worth buying, if not it is not worth buying
-        condition_of_new_book > current_best_condition ? res.status(200).json({ message: "Condition upgrade", worth_buying: true }) : res.status(200).json({ worth_buying: false })
+        condition_of_new_book > current_best_condition ? res.status(200).json({message: "Condition upgrade", worth_buying: true, success:true }) : res.status(200).json({message: "Current condition is better", worth_buying: false, success:true  })
 
     }
 
