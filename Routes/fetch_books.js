@@ -8,7 +8,7 @@ const express = require("express");
 const router = express.Router();
 
 //route
-router.post("/fetch_books", fetch_books_controller.fetch_books);
+router.get("/fetch_books", fetch_books_controller.fetch_books);
 
 
 module.exports = router;
