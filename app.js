@@ -50,7 +50,7 @@ mongoose
     MONGODBURI, { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(result => {
-    server.listen(4000);
+    server.listen(process.env.PORT || 4000);
     console.log("\n\x1b[36mServer running on port 4000\n")
   })
   .catch(err => {
