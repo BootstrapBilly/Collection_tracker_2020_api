@@ -2,8 +2,8 @@ const Book = require("../Models/Book")
 
 exports.delete_book = async (req, res, next) => {
 
-    const year = req.body.year;//grab the year 
-    const condition = req.body.condition//and condition from the request
+    const year = req.body.form_values.year;//grab the year 
+    const condition = req.body.form_values.condition//and condition from the request
 
     const book_exists = await Book.findOne({ year: year, condition: condition })//check if the given year and condition exists in the database
     if (!book_exists) return res.status(404).json({ error: "Book was not found"})//if it doesn't, return a 404

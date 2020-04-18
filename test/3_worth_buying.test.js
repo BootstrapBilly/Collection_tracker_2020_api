@@ -13,7 +13,7 @@ describe("Worth buying current copy Poor condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1950', condition: "Poor" })
+            .send({form_values : { year: '1950', condition: "Poor" }})
 
             .end((err, res) => {
 
@@ -31,7 +31,7 @@ describe("Worth buying current copy Poor condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1950', condition: "Fair" })
+            .send({form_values : { year: '1950', condition: "Fair" }})
 
             .end((err, res) => {
 
@@ -49,7 +49,7 @@ describe("Worth buying current copy Poor condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1950', condition: "Mint" })
+            .send({form_values : { year: '1950', condition: "Mint" }})
 
             .end((err, res) => {
 
@@ -71,7 +71,7 @@ describe("Worth buying current copy Fair condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1970', condition: "Poor" })
+            .send({form_values : { year: '1970', condition: "Poor" }})
 
             .end((err, res) => {
 
@@ -89,7 +89,7 @@ describe("Worth buying current copy Fair condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1970', condition: "Fair" })
+            .send({form_values : { year: '1970', condition: "Fair" }})
 
             .end((err, res) => {
 
@@ -107,7 +107,7 @@ describe("Worth buying current copy Fair condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1970', condition: "Mint" })
+            .send({form_values : { year: '1970', condition: "Mint" }})
 
             .end((err, res) => {
 
@@ -129,7 +129,7 @@ describe("Worth buying current copy Miny condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1990', condition: "Poor" })
+            .send({form_values : { year: '1990', condition: "Poor" }})
 
             .end((err, res) => {
 
@@ -147,7 +147,7 @@ describe("Worth buying current copy Miny condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1990', condition: "Fair" })
+            .send({form_values : { year: '1990', condition: "Fair" }})
 
             .end((err, res) => {
 
@@ -165,7 +165,7 @@ describe("Worth buying current copy Miny condition", () => {
 
             .post("/worth_buying")
             .set('content-type', 'application/json')
-            .send({ year: '1990', condition: "Mint" })
+            .send({form_values : { year: '1990', condition: "Mint" }})
 
             .end((err, res) => {
 

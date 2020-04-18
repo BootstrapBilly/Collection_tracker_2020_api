@@ -2,8 +2,6 @@ const Book = require("../Models/Book")
 
 exports.search_for_book = async (req, res, next) => {
 
-    console.log(req.body)
-
     const year = req.body.form_values;//grab the year 
     //if it does exist, get the best condition
     const condition_weighting = [["Poor", 1], ["Fair", 2], ["Mint", 3]]
@@ -12,12 +10,12 @@ exports.search_for_book = async (req, res, next) => {
 
         const books_found = await Book.find({ year: year })//check if the given year and condition exists in the database
 
-        if (!books_found.length) return res.status(404).json({ error: "Book not found" }) //if it doesn't exist, return a 404
+        if (!books_found.length) return res.status(404).json({ error: "Book not found", year:year }) //if it doesn't exist, return a 404
 
         //*Book exists
         const best_condition = find_best_condition(books_found, condition_weighting)//find the best condition stored in the database
 
-       return res.status(200).json({ message: "Book found successfully", book: {year:req.body.year, condition: best_condition}, success:true})//return the book with the best condition
+       return res.status(200).json({ message: "Book found successfully", book: {year:year, condition: best_condition}, success:true})//return the book with the best condition
 
     }
 

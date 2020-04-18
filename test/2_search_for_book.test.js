@@ -13,7 +13,7 @@ describe("Search for a book", ()=> {
         
         .post("/search_for_book")
         .set('content-type', 'application/json')
-        .send({year: '2012'})
+        .send({form_values : '2012'})
 
         .end((err, res) => {
 
@@ -31,7 +31,7 @@ describe("Search for a book", ()=> {
         
         .post("/search_for_book")
         .set('content-type', 'application/json')
-        .send({year: '1950'})
+        .send({form_values : '1950'})
 
         .end((err, res) => {
 
@@ -49,7 +49,7 @@ describe("Search for a book", ()=> {
         
         .post("/search_for_book")
         .set('content-type', 'application/json')
-        .send({year: '1970'})
+        .send({form_values : '1970'})
 
         .end((err, res) => {
 
@@ -67,7 +67,7 @@ describe("Search for a book", ()=> {
         
         .post("/search_for_book")
         .set('content-type', 'application/json')
-        .send({year: '1990'})
+        .send({form_values : '1990'})
 
         .end((err, res) => {
 
@@ -85,7 +85,7 @@ describe("Search for a book", ()=> {
         
         .post("/search_for_book")
         .set('content-type', 'application/json')
-        .send({year: '1901', condition: "Mint"})
+        .send({form_values : '1901'})
 
         .end((err, res) => {
 

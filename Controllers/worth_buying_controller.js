@@ -2,8 +2,6 @@ const Book = require("../Models/Book")
 
 exports.worth_buying = async (req, res, next) => {
 
-    console.log(req.body)
-
     const year = req.body.form_values.year;//grab the year 
     const new_book_condition = req.body.form_values.condition//and condition from the request
 

@@ -13,7 +13,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '2012', condition: "Poor"})
+        .send({form_values : {year: '2012', condition: "Poor"}})
 
         .end((err, res) => {
 
@@ -30,7 +30,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '2012', condition: "Fair"})
+        .send({form_values : {year: '2012', condition: "Fair"}})
 
         .end((err, res) => {
 
@@ -47,7 +47,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '2012', condition: "Mint"})
+        .send({form_values : {year: '2012', condition: "Mint"}})
 
         .end((err, res) => {
 
@@ -64,7 +64,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '1950', condition: "Poor"})
+        .send({form_values : {year: '1950', condition: "Poor"}})
 
         .end((err, res) => {
 
@@ -81,7 +81,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '1970', condition: "Fair"})
+        .send({form_values : {year: '1970', condition: "Fair"}})
 
         .end((err, res) => {
 
@@ -98,7 +98,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '1990', condition: "Mint"})
+        .send({form_values : {year: '1990', condition: "Mint"}})
 
         .end((err, res) => {
 
@@ -115,7 +115,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '2012', condition: "Poor"})
+        .send({form_values : {year: '2012', condition: "Poor"}})
 
         .end((err, res) => {
 
@@ -132,7 +132,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '2012', condition: "Fair"})
+        .send({form_values : {year: '2012', condition: "Fair"}})
 
         .end((err, res) => {
 
@@ -149,7 +149,7 @@ describe("Add a new book", ()=> {
         
         .post("/add_book")
         .set('content-type', 'application/json')
-        .send({year: '2012', condition: "Mint"})
+        .send({form_values : {year: '2012', condition: "Mint"}})
 
         .end((err, res) => {
 
