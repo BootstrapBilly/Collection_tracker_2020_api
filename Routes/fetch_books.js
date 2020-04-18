@@ -1,5 +1,5 @@
 //Controllers
-const fetch_books_controller = require("../controllers/fetch_books_controller");
+const fetch_books_controller = require("../controllers/FetchBooksController");
 
 //External
 const express = require("express");

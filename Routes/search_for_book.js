@@ -1,5 +1,5 @@
 //Controllers
-const search_for_book_controller = require("../controllers/search_for_book_controller");
+const search_for_book_controller = require("../controllers/SearchForBooksController");
 
 //External
 const express = require("express");

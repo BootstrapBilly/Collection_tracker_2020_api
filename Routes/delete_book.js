@@ -1,5 +1,5 @@
 //Controllers
-const delete_book_controller = require("../controllers/delete_book_controller");
+const delete_book_controller = require("../controllers/DeleteBookController");
 
 //External
 const express = require("express");

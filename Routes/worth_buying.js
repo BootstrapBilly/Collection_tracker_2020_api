@@ -1,5 +1,5 @@
 //Controllers
-const worth_buying_controller = require("../controllers/worth_buying_controller");
+const worth_buying_controller = require("../controllers/WorthBuyingController");
 
 //External
 const express = require("express");
