@@ -1,5 +1,5 @@
 //Controllers
-const add_book_controller = require("../controllers/add_book_controller.js");
+const add_book_controller = require("../controllers/add_book_controller");
 
 //External
 const express = require("express");
