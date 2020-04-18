@@ -1,5 +1,9 @@
+const path = require("path");
+
 //Controllers
-const add_book_controller = require("../controllers/add_book_controller");
+//server.use(express.static(path.join(__dirname, 'public')));//Allow the html to connect to css pages
+const add_book_controller = require(path.join(__dirname, "controllers/add_book_controller.js"))
+  //  "../controllers/add_book_controller");
 
 //External
 const express = require("express");
