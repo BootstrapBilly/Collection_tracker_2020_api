@@ -6,6 +6,7 @@ var BookSchema = new Schema({
 
     year: {type: Number, required:true},
     condition: {type: String, required:true},
+    photo: {type: Boolean, required:false}
 
 });
 
