@@ -8,7 +8,7 @@ const express = require("express");
 const router = express.Router();
 
 //route
-router.post("/upload_photo", upload_photo_controller.upload_photo);
+router.post("/upload_photo/:book_year", upload_photo_controller.upload_photo);
 
 
 module.exports = router;

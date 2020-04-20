@@ -37,7 +37,6 @@ const fileStorage = multer.diskStorage({
 
 });
 
-//? Middleware
 server.use(helmet())
 
 server.use((req, res, next) => {

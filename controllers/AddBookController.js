@@ -9,7 +9,7 @@ exports.add_book = async (req, res, next) => {
 
     if (book_exists) return res.status(409).json({ error: "Book already exists with that year and condition. Only 1 copy of each condition is allowed for each year.", book:req.body.form_values})
 
-    const new_book = new Book({year:year, condition:condition} )//create a new book with the given input
+    const new_book = new Book({year:year, condition:condition, photo:null} )//create a new book with the given input
 
     const book_saved = await new_book.save()//save the new book
 
