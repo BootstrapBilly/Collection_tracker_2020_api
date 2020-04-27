@@ -8,6 +8,7 @@ const search_for_book = require("./Routes/search_for_book")
 const worth_buying = require("./Routes/worth_buying")
 const fetch_books = require("./Routes/fetch_books")
 const upload_photo = require("./Routes/upload_photo")
+const get_conditions = require("./Routes/get_conditions")
 
 //External
 const bodyParser = require("body-parser");
@@ -48,10 +49,13 @@ server.use((req, res, next) => {
 
 })
 
-server.use(multer({storage : fileStorage}).any("image"))
-
 server.use(bodyParser.json());
-server.use(express.static(path.join(__dirname, 'public')));//Allow the html to connect to css pages
+
+//server.use(express.static(path.join(__dirname, 'public')));//Allow the html to connect to css pages
+
+server.use(multer({storage : fileStorage}).any("image"))
+server.use("./images", express.static(path.join(__dirname, "images")))
+
 server.use(bodyParser.urlencoded({ extended: false }));//Set up the body parser
 
 
@@ -61,6 +65,7 @@ server.use(search_for_book)
 server.use(worth_buying)
 server.use(fetch_books)
 server.use(upload_photo)
+server.use(get_conditions)
 
 
 //* Database connection
