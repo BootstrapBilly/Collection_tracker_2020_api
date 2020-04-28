@@ -1,5 +1,5 @@
 //Controllers
-const get_conditions_controller = require("../controllers/getConditionsController");
+const get_conditions_controller = require("../controllers/GetConditionsController");
 
 //External
 const express = require("express");
