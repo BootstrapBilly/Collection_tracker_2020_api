@@ -5,9 +5,9 @@ const {expect} = chai;
 
 chai.use(chaiHttp);
 
-describe("Return all books", ()=> {
+describe("Fetch books while empty", ()=> {
 
-    it("Return all books", (done) => {
+    it("Fetch books", (done) => {
 
         chai.request("http://localhost:4000")
         
