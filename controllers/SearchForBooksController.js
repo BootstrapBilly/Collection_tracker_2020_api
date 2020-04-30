@@ -15,7 +15,7 @@ exports.search_for_book = async (req, res, next) => {
         //*Book exists
         const best_condition = find_best_condition(books_found, condition_weighting)//find the best condition stored in the database
 
-       return res.status(200).json({ message: "Book found successfully", book: {year:year, condition: best_condition}, success:true})//return the book with the best condition
+       return res.status(200).json({ message: "Book found successfully", book: {year:year, condition: best_condition}, success:true, type:"search"})//return the book with the best condition
 
     }
 
