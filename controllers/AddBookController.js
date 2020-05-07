@@ -15,7 +15,9 @@ exports.add_book = async (req, res, next) => {
 
     const book_saved = await new_book.save()//save the new book
 
+    const books_found = await Book.find({ year: year })//check if the given year and condition exists in the database
+
     //if it saved successfully, send a 201 status, if it failed, send a database error
-    book_saved ? res.status(201).json({message: "Book saved successfully", success:true, book:req.body.form_values, type:"add"}) : res.status(500).json({error:"Something went wrong with the database"})
+    book_saved ? res.status(201).json({message: "Book saved successfully", success:true, books:books_found, type:"add"}) : res.status(500).json({error:"Something went wrong with the database"})
 
 }
