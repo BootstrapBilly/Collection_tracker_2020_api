@@ -8,7 +8,7 @@ const express = require("express");
 const router = express.Router();
 
 //route
-router.delete("/delete_book", delete_book_controller.delete_book);
+router.post("/delete_book", delete_book_controller.delete_book);
 
 
 module.exports = router;

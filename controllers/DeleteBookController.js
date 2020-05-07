@@ -11,6 +11,6 @@ exports.delete_book = async (req, res, next) => {
     const book_deleted = await Book.deleteOne({year:year, condition:condition})//otherwise, delete the book 
 
     //if the book was deleted successfully, send a 204, if not send a 500
-    book_deleted ? res.status(200).json({message:"Book deleted successfully"}) : res.status(500).json({error:"Something went wrong with the database"})
+    book_deleted ? res.status(200).json({message:"Book deleted successfully", success:true, type:"delete"}) : res.status(500).json({error:"Something went wrong with the database"})
 
 }
