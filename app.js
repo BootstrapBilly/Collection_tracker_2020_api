@@ -58,7 +58,6 @@ server.use("./images", express.static(path.join(__dirname, "images")))
 
 server.use(bodyParser.urlencoded({ extended: false }));//Set up the body parser
 
-
 server.use(add_book_router)
 server.use(delete_book_router)
 server.use(search_for_book)
