@@ -13,6 +13,6 @@ exports.delete_book = async (req, res, next) => {
     const books_found = await Book.find({ year: year })//check if the given year and condition exists in the database
 
     //if the book was deleted successfully, send a 204, if not send a 500
-    book_deleted ? res.status(200).json({message:"Book deleted successfully", success:true, type:"delete", books:books_found}) : res.status(500).json({error:"Something went wrong with the database"})
+    book_deleted ? res.status(200).json({message:"Book deleted successfully", success:true, type:"delete", books:books_found, year:year, condition:condition}) : res.status(500).json({error:"Something went wrong with the database"})
 
 }
