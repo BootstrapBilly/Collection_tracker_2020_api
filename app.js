@@ -73,7 +73,7 @@ server.use(get_conditions)
 
 mongoose
   .connect(
-    MONGODBURIPRIVATE, { useUnifiedTopology: true, useNewUrlParser: true }
+    MONGODBURI, { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(result => {
     server.listen(process.env.PORT || 4000);
