@@ -20,6 +20,8 @@ const multer = require("multer")
 //-File configuration
 const MONGODBURI = "mongodb://Billy:bjc123@billy-shard-00-00-qqthk.mongodb.net:27017,billy-shard-00-01-qqthk.mongodb.net:27017,billy-shard-00-02-qqthk.mongodb.net:27017/Collection_tracker?ssl=true&replicaSet=Billy-shard-0&authSource=admin&retryWrites=true&w=majority";
 
+const MONGODBURIPRIVATE = "mongodb://Billy:bjc123@billy-shard-00-00-qqthk.mongodb.net:27017,billy-shard-00-01-qqthk.mongodb.net:27017,billy-shard-00-02-qqthk.mongodb.net:27017/Collection_tracker_private?ssl=true&replicaSet=Billy-shard-0&authSource=admin&retryWrites=true&w=majority";
+
 const server = express();
 
 const fileStorage = multer.diskStorage({
@@ -71,7 +73,7 @@ server.use(get_conditions)
 
 mongoose
   .connect(
-    MONGODBURI, { useUnifiedTopology: true, useNewUrlParser: true }
+    MONGODBURIPRIVATE, { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(result => {
     server.listen(process.env.PORT || 4000);
