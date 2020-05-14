@@ -4,8 +4,6 @@ exports.get_conditions = async (req, res, next) => {
 
     const year = req.body.form_values;//grab the year 
     const conditions = []
-
-    console.log(year)
     
     try {
 
