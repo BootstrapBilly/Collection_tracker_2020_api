@@ -11,9 +11,9 @@ describe("Delete a book", ()=> {
 
         chai.request("http://localhost:4000")
         
-        .delete("/delete_book")
+        .post("/delete_book")
         .set('content-type', 'application/json')
-        .send({form_values : {year: '2012', condition: "Poor"}})
+        .send({form_values : {year: "2012", condition: "Poor"}})
 
         .end((err, res) => {
 
@@ -28,7 +28,7 @@ describe("Delete a book", ()=> {
 
         chai.request("http://localhost:4000")
         
-        .delete("/delete_book")
+        .post("/delete_book")
         .set('content-type', 'application/json')
         .send({form_values : {year: '2012', condition: "Fair"}})
 
@@ -45,7 +45,7 @@ describe("Delete a book", ()=> {
 
         chai.request("http://localhost:4000")
         
-        .delete("/delete_book")
+        .post("/delete_book")
         .set('content-type', 'application/json')
         .send({form_values : {year: '2012', condition: "Mint"}})
 
@@ -62,7 +62,7 @@ describe("Delete a book", ()=> {
 
         chai.request("http://localhost:4000")
         
-        .delete("/delete_book")
+        .post("/delete_book")
         .set('content-type', 'application/json')
         .send({form_values : {year: '1950', condition: "Poor"}})
 
@@ -79,7 +79,7 @@ describe("Delete a book", ()=> {
 
         chai.request("http://localhost:4000")
         
-        .delete("/delete_book")
+        .post("/delete_book")
         .set('content-type', 'application/json')
         .send({form_values : {year: '1970', condition: "Fair"}})
 
@@ -96,7 +96,7 @@ describe("Delete a book", ()=> {
 
         chai.request("http://localhost:4000")
         
-        .delete("/delete_book")
+        .post("/delete_book")
         .set('content-type', 'application/json')
         .send({form_values : {year: '1990', condition: "Mint"}})
 
@@ -113,7 +113,7 @@ describe("Delete a book", ()=> {
 
         chai.request("http://localhost:4000")
         
-        .delete("/delete_book")
+        .post("/delete_book")
         .set('content-type', 'application/json')
         .send({form_values : {year: '2000', condition: "Poor"}})
 

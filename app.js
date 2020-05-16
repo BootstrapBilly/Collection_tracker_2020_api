@@ -2,13 +2,7 @@
 const path = require("path");
 
 //routers
-const add_book_router = require("./Routes/add_book")
-const delete_book_router = require("./Routes/delete_book")
-const search_for_book = require("./Routes/search_for_book")
-const worth_buying = require("./Routes/worth_buying")
-const fetch_books = require("./Routes/fetch_books")
-const get_conditions = require("./Routes/get_conditions")
-const set_image_url = require("./Routes/set_image_url")
+const router = require("./Routes/router")
 
 //External
 const bodyParser = require("body-parser");
@@ -53,25 +47,12 @@ server.use((req, res, next) => {
 
 server.use(bodyParser.json());
 
-server.use((req,res,next) => {
-
-console.log(req.body)
-next()
-})
-//server.use(express.static(path.join(__dirname, 'public')));//Allow the html to connect to css pages
-
 server.use(multer({storage : fileStorage}).any("image"))
 server.use("./images", express.static(path.join(__dirname, "images")))
 
 server.use(bodyParser.urlencoded({ extended: false }));//Set up the body parser
 
-server.use(add_book_router)
-server.use(delete_book_router)
-server.use(search_for_book)
-server.use(worth_buying)
-server.use(fetch_books)
-server.use(get_conditions)
-server.use(set_image_url)
+server.use(router)
 
 
 //* Database connection
