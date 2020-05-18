@@ -59,7 +59,7 @@ server.use(router)
 
 mongoose
   .connect(
-    MONGODBURI, { useUnifiedTopology: true, useNewUrlParser: true }
+    MONGODBURIPRIVATE, { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(result => {
     server.listen(process.env.PORT || 4000);
