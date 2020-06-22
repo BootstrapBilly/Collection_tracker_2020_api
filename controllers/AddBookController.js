@@ -2,13 +2,10 @@ const Book = require("../Models/Book")
 
 exports.add_book = async (req, res, next) => {
 
-    console.log(req.body)
     
     const year = req.body.form_values.year;//grab the year 
     const condition = req.body.form_values.condition//and condition from the request
     const url = req.body.form_values.url ? req.body.form_values.url.url : null//and condition from the request
-
-    
 
     const book_exists = await Book.findOne({ year: year, condition: condition })//check if the given year and condition already exists in the database
 

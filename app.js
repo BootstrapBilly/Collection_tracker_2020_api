@@ -10,11 +10,14 @@ const express = require("express");
 const mongoose = require('mongoose');
 const helmet = require("helmet")
 const multer = require("multer")
+const dotenv = require("dotenv")
+
+dotenv.config()
 
 //-File configuration
-const MONGODBURI = "mongodb://Billy:bjc123@billy-shard-00-00-qqthk.mongodb.net:27017,billy-shard-00-01-qqthk.mongodb.net:27017,billy-shard-00-02-qqthk.mongodb.net:27017/Collection_tracker?ssl=true&replicaSet=Billy-shard-0&authSource=admin&retryWrites=true&w=majority";
+const MONGODBURI = `mongodb://Billy:${process.env.mongopw}@billy-shard-00-00-qqthk.mongodb.net:27017,billy-shard-00-01-qqthk.mongodb.net:27017,billy-shard-00-02-qqthk.mongodb.net:27017/Collection_tracker?ssl=true&replicaSet=Billy-shard-0&authSource=admin&retryWrites=true&w=majority`;
 
-const MONGODBURIPRIVATE = "mongodb://Billy:bjc123@billy-shard-00-00-qqthk.mongodb.net:27017,billy-shard-00-01-qqthk.mongodb.net:27017,billy-shard-00-02-qqthk.mongodb.net:27017/Collection_tracker_private?ssl=true&replicaSet=Billy-shard-0&authSource=admin&retryWrites=true&w=majority";
+const MONGODBURIPRIVATE = `mongodb://Billy:${process.env.mongopw}@billy-shard-00-00-qqthk.mongodb.net:27017,billy-shard-00-01-qqthk.mongodb.net:27017,billy-shard-00-02-qqthk.mongodb.net:27017/Collection_tracker_private?ssl=true&replicaSet=Billy-shard-0&authSource=admin&retryWrites=true&w=majority`;
 
 const server = express();
 
@@ -59,7 +62,7 @@ server.use(router)
 
 mongoose
   .connect(
-    MONGODBURIPRIVATE, { useUnifiedTopology: true, useNewUrlParser: true }
+    MONGODBURI, { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(result => {
     server.listen(process.env.PORT || 4000);
